@@ -15,7 +15,7 @@ using namespace std;
 
 #define HISTC 256 
 
-void diffusion(Mat& srcimg, Mat& dstimg, int nite, int K, float dt=0.2, float sigmma=0);//niteµü´ú´ÎÊı£¬KÎªãĞÖµ
+void diffusion(Mat& srcimg, Mat& dstimg, int nite, int K, float dt=0.2, float sigmma=0);//niteÂµÃ¼Â´ÃºÂ´ÃÃŠÃ½Â£Â¬KÃÂªÃ£ÃÃ–Âµ
 void calGrad(Mat& src,Mat& dN, Mat&  dS, Mat& dW, Mat& dE);
 
 void sigmoid(Mat& src);
