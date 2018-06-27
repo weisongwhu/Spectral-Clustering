@@ -7,5 +7,5 @@
 #define CONTOUR_SIGN 100
 using namespace std;
 using namespace cv;
-int caculateRoiNum(Mat& img,string &si,string& sPathName, Mat& imgs);/*得到一个轮廓中的所有像素点*/
+int caculateRoiNum(Mat& img,string &si,string& sPathName, Mat& imgs);/*寰楀埌涓�涓疆寤撲腑鐨勬墍鏈夊儚绱犵偣*/
 int caculateContourNum(Mat& img, int di, int dj,int minX,int minY,int maxX,int maxY);
