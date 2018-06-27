@@ -444,7 +444,7 @@ void F_Gray2Color(Mat& gray_mat, Mat& color_mat)
 		cvtColor(gray_mat,gray_mat,CV_BGR2GRAY);
 	}
 	int rows = gray_mat.rows, cols = gray_mat.cols;
-//½«»Ò¶È·Ö²¼ÑÓÉúµ½0~255µÄÇø¼äÉÏ
+//å°†ç°åº¦åˆ†å¸ƒå»¶ç”Ÿåˆ°0~255çš„åŒºé—´ä¸Š
 	int maxVal = 0;
 	for(int i=0;i<rows;i++)
 		for(int j=0;j<cols;j++)
@@ -460,12 +460,12 @@ void F_Gray2Color(Mat& gray_mat, Mat& color_mat)
 		ratio = 255/maxVal;
 	}
 		gray_mat = gray_mat*ratio;
-	// ÅĞ¶ÏÊäÈëµÄ»Ò¶ÈÍ¼ºÍÊä³öµÄÎ±²ÊÉ«Í¼ÊÇ·ñ´óĞ¡ÏàÍ¬¡¢¸ñÊ½ÊÇ·ñ·ûºÏÒªÇó   
+	// åˆ¤æ–­è¾“å…¥çš„ç°åº¦å›¾å’Œè¾“å‡ºçš„ä¼ªå½©è‰²å›¾æ˜¯å¦å¤§å°ç›¸åŒã€æ ¼å¼æ˜¯å¦ç¬¦åˆè¦æ±‚   
 //	if (CV_ARE_SIZES_EQ(gray_mat, color_mat) && stype == CV_8UC1 && dtype == CV_8UC3)
 //	{
-// 		CvMat* red = cvCreateMat(rows, cols, CV_8U);      // ºìÉ«·ÖÁ¿
-// 		CvMat* green = cvCreateMat(rows, cols, CV_8U);   // ÂÌÉ«·ÖÁ¿
-// 		CvMat* blue = cvCreateMat(rows, cols, CV_8U);    // À¶É«·ÖÁ¿
+// 		CvMat* red = cvCreateMat(rows, cols, CV_8U);      // çº¢è‰²åˆ†é‡
+// 		CvMat* green = cvCreateMat(rows, cols, CV_8U);   // ç»¿è‰²åˆ†é‡
+// 		CvMat* blue = cvCreateMat(rows, cols, CV_8U);    // è“è‰²åˆ†é‡
 // 		CvMat* mask = cvCreateMat(rows, cols, CV_8U);   
 //		cvSubRS(gray_mat, cvScalar(255), blue);          // blue = 255 - gray
 // 		cvCopy(gray_mat, red);                           // red = gray
@@ -474,7 +474,7 @@ void F_Gray2Color(Mat& gray_mat, Mat& color_mat)
 // 		cvSubRS(green, cvScalar(255), green, mask);      // green = 255 - gray , if gray >= 128
 // 		cvConvertScale(green, green, 2.0, 0.0);          // green = 2 * green
 // 
-// 		// ½«À¶ÂÌºìÈıÉ«ÈÚºÏÎªÒ»·ùÎ±²ÊÉ«Í¼
+// 		// å°†è“ç»¿çº¢ä¸‰è‰²èåˆä¸ºä¸€å¹…ä¼ªå½©è‰²å›¾
 // 		cvMerge(blue, green, red, NULL, color_mat);
 
 // 		cvReleaseMat( &red );
@@ -504,8 +504,8 @@ void DrawContoursAroundSegments(
 {
 	if(Img.channels()==1)
 		cvtColor(Img,Img,CV_GRAY2BGR);
-	const int dx8[8] = {-1, -1,  0,  1, 1, 1, 0, -1};//°ËÁÚÓò
-	const int dy8[8] = { 0, -1, -1, -1, 0, 1, 1,  1};//°ËÁÚÓò
+	const int dx8[8] = {-1, -1,  0,  1, 1, 1, 0, -1};//å…«é‚»åŸŸ
+	const int dy8[8] = { 0, -1, -1, -1, 0, 1, 1,  1};//å…«é‚»åŸŸ
 	int width = Img.cols;
 	int height =Img.rows;
 	int sz = width*height;
@@ -545,7 +545,7 @@ void Label2IMG(const int* labels, Mat& img)
 		{
 			img.at<uchar>(i,j) = labels[j+i*img.cols];
 			Scalar intensity = img.at<uchar>(i,j);  
-			std::cout<<intensity.val[0]<<std::endl;//Êä³öÃ¿¸öÏñËØµãµÄlabel
+			std::cout<<intensity.val[0]<<std::endl;//è¾“å‡ºæ¯ä¸ªåƒç´ ç‚¹çš„label
 			std::cout<<intensity.val[1]<<std::endl;//0
 			std::cout<<intensity.val[2]<<std::endl;//0
 		}
