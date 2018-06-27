@@ -31,8 +31,8 @@ int superpixelNum(vector<int> superpixelInfmation, Mat &imgs, int superpixelSize
 int main()
 {
 
-	string sPathName = "E:\\ÈË¹¤ÂÖÀª\\";
-	string sOriginalPath = "E:\\Í¼Æ¬\\Ô­Í¼\\";
+	string sPathName = "E:\\äººå·¥è½®å»“\\";
+	string sOriginalPath = "E:\\å›¾ç‰‡\\åŸå›¾\\";
 	for (int i = 3; i <= 42; i++)
 	{
 		if (i==9||i == 10 || i == 16 || i == 19 || i == 35 || i == 39) { continue; }
@@ -223,7 +223,7 @@ int findAllContour(vector<Point> &finalContourline, vector<vector<int>>& finalCo
 	/*
 	if (di == 0 || di == (sizeX - 1) || dj == 0||dj==(sizeY-1))
 	{
-	/////±ß½çÂÖÀª
+	/////è¾¹ç•Œè½®å»“
 	boundryFlag[k] = 1;
 	}*/
 	finalContourline.push_back(Point(di, dj));
@@ -423,9 +423,9 @@ int superpixelNum(vector<int> superpixelInfmation, Mat &imgs,int superpixelSize)
 int updatePQ(vector<int> &weight, vector<vector<int>> &positionQueue, int pXY, int od)
 {
 	//////////////////////////////////////////////////////////////////////////
-	/////////////////////////////¸Ãº¯Êı¿ÉÒÔ¸ú¾İÄ³¸ö¾ØÕóÖĞÄ³¸öÖµ³öÏÖµÄ¸öÊıod£¬°´
-	///////////////////////Ğ¡µ½´óµÄË³ĞòÅÅÁĞ¸öÊıÖµod£¬²¢ÇÒÄÜ¹»¸üĞÂÏàÓ¦µÄÊıÖµ¶ÔÓ¦µÄ×ø±êPXY
-	///////////////////////¸ù¾İÈ¨Öµ°´DÖµ´óĞ¡¸üĞÂ×ø±ê¶ÓÁĞ
+	/////////////////////////////è¯¥å‡½æ•°å¯ä»¥è·Ÿæ®æŸä¸ªçŸ©é˜µä¸­æŸä¸ªå€¼å‡ºç°çš„ä¸ªæ•°odï¼ŒæŒ‰
+	///////////////////////å°åˆ°å¤§çš„é¡ºåºæ’åˆ—ä¸ªæ•°å€¼odï¼Œå¹¶ä¸”èƒ½å¤Ÿæ›´æ–°ç›¸åº”çš„æ•°å€¼å¯¹åº”çš„åæ ‡PXY
+	///////////////////////æ ¹æ®æƒå€¼æŒ‰Då€¼å¤§å°æ›´æ–°åæ ‡é˜Ÿåˆ—
 	int x = 0;
 	while (x < weight.size() && od != weight[x]) { x++; }
 	if (x < weight.size())
@@ -434,7 +434,7 @@ int updatePQ(vector<int> &weight, vector<vector<int>> &positionQueue, int pXY, i
 	}
 	else
 	{
-		//////°´´óĞ¡ÕÒ³öodÔÚweightÖĞµÄÎ»ÖÃ²¢²åÈë
+		//////æŒ‰å¤§å°æ‰¾å‡ºodåœ¨weightä¸­çš„ä½ç½®å¹¶æ’å…¥
 		if (weight.size() == 0)
 		{
 			weight.push_back(od);
