@@ -29,7 +29,7 @@ void diffusion (Mat& srcimg, Mat& dstimg, int nite, int K, float dt, float sigmm
 	for(int i=0; i<nite; i++)
 	{
 /*
-		if(sigmma > 0)//.hÀïÃæsigmma=0
+		if(sigmma > 0)//.hé‡Œé¢sigmma=0
 		{
 			src.copyTo(srctmp);		 
 			GaussianBlur(src,src,cvSize(3,3),sigmma,sigmma);//GaussianBlur:Smoothes an image using a Gaussian ?lter.
@@ -91,28 +91,28 @@ void calGrad(Mat &src, Mat& dN, Mat& dS, Mat& dW, Mat& dE)
 {
 	CvSize size = src.size();
 
-	//dN ÉÏ±ß½ç
+	//dN ä¸Šè¾¹ç•Œ
 	for(int i=0; i< size.width; i++)
 		dN.at<float>(0,i) = 0;
 	//dN
 	for(int y=1; y<size.height; y++)
 		for(int x=0;x< size.width; x++)
 			dN.at<float>(y,x) = src.at<float>(y-1,x) - src.at<float>(y,x);
-	//dSÏÂ±ß½ç
+	//dSä¸‹è¾¹ç•Œ
 	for(int i=0;i< size.width; i++)
 		dS.at<float>(size.height-1,i) = 0;
 	//dS
 	for(int y=0; y<size.height-1; y++)
 		for(int x=0; x<size.width; x++)
 			dS.at<float>(y,x) =  src.at<float>(y+1,x) -  src.at<float>(y,x);
-	//dW×ó±ß½ç
+	//dWå·¦è¾¹ç•Œ
 	for(int i=0; i<size.height; i++)
 		dW.at<float>(i,0) = 0;
 	//dW
 	for(int y=0; y<size.height; y++)
 		for(int x=1; x<size.width; x++)
 			dW.at<float>(y,x) =  src.at<float>(y,x-1) -  src.at<float>(y,x);
-	//dEÓÒ±ß½ç
+	//dEå³è¾¹ç•Œ
 	for(int i=0; i<size.height; i++)
 		dE.at<float>(i,size.width-1) = 0;
 	//dE
