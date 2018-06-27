@@ -33,9 +33,10 @@ int main()
 
 	string sPathName = "E:\\人工轮廓\\";
 	string sOriginalPath = "E:\\图片\\原图\\";
-	for (int i = 3; i <= 42; i++)
-	{
-		if (i==9||i == 10 || i == 16 || i == 19 || i == 35 || i == 39) { continue; }
+	//for (int i = 3; i <= 42; i++)
+	//{
+		//if (i==9||i == 10 || i == 16 || i == 19 || i == 35 || i == 39) { continue; }
+		int i=3; 
 		char buf0[10];
 		sprintf_s(buf0, "%d", i);
 		string si = buf0;
@@ -53,12 +54,13 @@ int main()
 		if (ROI_Pixel_num > 10000) { pixel_num = 500; }
 		else { pixel_num = 100; }
 
-		for (int kn =10; kn < (double)ROI_Pixel_num / pixel_num; kn = kn + 2)
-		{
-			clusterBasedSuperpixel(origin_pic_name, sPathName, ROI_Pixel_num, kn, si, imgs);
+		//for (int kn =10; kn < (double)ROI_Pixel_num / pixel_num; kn = kn + 2)
+		//{
+		int kn = 24;
+		clusterBasedSuperpixel(origin_pic_name, sPathName, ROI_Pixel_num, kn, si, imgs);
 
-		}
-	}
+		//}
+	//}
 
 	return 0;
 }
