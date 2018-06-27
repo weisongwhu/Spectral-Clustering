@@ -24,7 +24,7 @@ int mainAClaster(vector<vector<double>>& wOfNJW, vector<vector<int>>& ClasterInf
 		miniter = wOfNJW.size();
 	}
 /*
-	ofstream wof1("E:\\ËÎÎ°\\IMRGandAutoNum\\ImrgAutoNum\\ImrgAutoNum\\x.txt");
+	ofstream wof1("E:\\å®‹ä¼Ÿ\\IMRGandAutoNum\\ImrgAutoNum\\ImrgAutoNum\\x.txt");
 	for (int i = 0; i < wOfNJW.size(); i++)
 	{
 		for (int j = 0; j < wOfNJW[0].size(); j++)
@@ -38,7 +38,7 @@ int mainAClaster(vector<vector<double>>& wOfNJW, vector<vector<int>>& ClasterInf
 	{
 		vdVector.push_back(xOfNJW[i]);
 /*
-		int Xflag = 0;//±êÖ¾£¬XÒ»ĞĞ²»È«Îª0µÄ³¬ÏñËØµÄÊıÄ¿
+		int Xflag = 0;//æ ‡å¿—ï¼ŒXä¸€è¡Œä¸å…¨ä¸º0çš„è¶…åƒç´ çš„æ•°ç›®
 		for (int n = 0; n < vdVector[0].size(); n++)
 		{
 			int j = 0;
@@ -66,8 +66,8 @@ int mainAClaster(vector<vector<double>>& wOfNJW, vector<vector<int>>& ClasterInf
 		}
 	}
 /*
-	fstream fsd("G:\\MATLAB\\MATLAB2015b\\½»²æ±àÒë\\MNCUT\\D.txt", fstream::out);
-	fstream fsx("G:\\MATLAB\\MATLAB2015b\\½»²æ±àÒë\\MNCUT\\V.txt", fstream::out);
+	fstream fsd("G:\\MATLAB\\MATLAB2015b\\äº¤å‰ç¼–è¯‘\\MNCUT\\D.txt", fstream::out);
+	fstream fsx("G:\\MATLAB\\MATLAB2015b\\äº¤å‰ç¼–è¯‘\\MNCUT\\V.txt", fstream::out);
 	for (int i = 0; i < maxi; i++)
 	{
 		for (int j = 0; j < xOfNJW[0].size(); j++)
@@ -90,7 +90,7 @@ int mainAClaster(vector<vector<double>>& wOfNJW, vector<vector<int>>& ClasterInf
 	Engine *eig1;
 	while (!(eig1 = engOpen(NULL)))
 	{
-		std::cout << endl << "MATLABÒıÇæÆô¶¯Ê§°Ü£¡" << endl;
+		std::cout << endl << "MATLABå¼•æ“å¯åŠ¨å¤±è´¥ï¼" << endl;
 	}
 	engEvalString(eig1, "MNcutK");
 	if (engClose(eig1))
@@ -98,7 +98,7 @@ int mainAClaster(vector<vector<double>>& wOfNJW, vector<vector<int>>& ClasterInf
 		std::cout << "close failure" << endl;
 	}
 //	delete[] eig1;
-	fstream  ifXk("G:\\MATLAB\\MATLAB2015b\\½»²æ±àÒë\\MNCUT\\Xk.txt", fstream::in);
+	fstream  ifXk("G:\\MATLAB\\MATLAB2015b\\äº¤å‰ç¼–è¯‘\\MNCUT\\Xk.txt", fstream::in);
 	for (int i = 0; i < maxi; i++)
 	{
 		vector<int> line1;
@@ -135,7 +135,7 @@ int caculateX(vector<vector<double>>& wOfNJW, vector<vector<double>>& xOfNJW, ve
 {
 
 /*
-	ofstream wof1("E:\\ËÎÎ°\\IMRGandAutoNum\\ImrgAutoNum\\ImrgAutoNum\\w.txt");
+	ofstream wof1("E:\\å®‹ä¼Ÿ\\IMRGandAutoNum\\ImrgAutoNum\\ImrgAutoNum\\w.txt");
 	for (int i = 0; i < wOfNJW.size(); i++)
 	{
 		for (int j = 0; j < wOfNJW[0].size(); j++)
@@ -148,15 +148,15 @@ int caculateX(vector<vector<double>>& wOfNJW, vector<vector<double>>& xOfNJW, ve
 	Engine *ep;
 	while (!(ep = engOpen(NULL)))
 	{
-		//fprintf(stderr, "\n matlabÒıÇæÆô¶¯Ê§°Ü!\n");
-		std::cout << endl << "MATLABÒıÇæÆô¶¯Ê§°Ü£¡" << endl;
+		//fprintf(stderr, "\n matlabå¼•æ“å¯åŠ¨å¤±è´¥!\n");
+		std::cout << endl << "MATLABå¼•æ“å¯åŠ¨å¤±è´¥ï¼" << endl;
 	}
 	engEvalString(ep, "clculateXfromW");
 	if (engClose(ep))
 	{
 		std::cout << "close failure" << endl;
 	}
-	std::fstream V_in("E:\\ËÎÎ°\\IMRGandAutoNum\\ImrgAutoNum\\ImrgAutoNum\\V.txt", std::ofstream::in);
+	std::fstream V_in("E:\\å®‹ä¼Ÿ\\IMRGandAutoNum\\ImrgAutoNum\\ImrgAutoNum\\V.txt", std::ofstream::in);
 	double vtd = 0;
 	xOfNJW.clear();
 	for (int i = 0; i < wOfNJW.size(); i++)
@@ -181,7 +181,7 @@ int caculateX(vector<vector<double>>& wOfNJW, vector<vector<double>>& xOfNJW, ve
 		{
 			sumI += wOfNJW[i][j];
 		}
-		dOfNJW[i][i] = 1/sqrt(sumI);     //Ö±½Ó¼ÆËãD¾ØÕóµÄ-1/2´Î·½
+		dOfNJW[i][i] = 1/sqrt(sumI);     //ç›´æ¥è®¡ç®—DçŸ©é˜µçš„-1/2æ¬¡æ–¹
 	}
 	vector<vector<double>> dl(wOfNJW.size(), vector<double>(wOfNJW.size(), 0));
 	matrixMtpl(dOfNJW, wOfNJW, dl);
@@ -326,7 +326,7 @@ int evrotMain(vector<vector<double>>& vdVector, vector<vector<int>>& cluster_arr
 		{
 			if (method_rot==0)
 			{
-			/*ÓÃÊıÖµµ¼ÊıÌİ¶ÈÏÂ½µ*/
+			/*ç”¨æ•°å€¼å¯¼æ•°æ¢¯åº¦ä¸‹é™*/
 				alpha = 0.1;
 				/*move up*/
 				vtheta_new[d] = vtheta[d] + alpha;
@@ -354,7 +354,7 @@ int evrotMain(vector<vector<double>>& vdVector, vector<vector<int>>& cluster_arr
 					}
 				}
 			}
-			else/*¾ØÕóµ¼ÊıÌİ¶ÈÏÂ½µ*/
+			else/*çŸ©é˜µå¯¼æ•°æ¢¯åº¦ä¸‹é™*/
 			{
 				alpha = 1.0;
 				dJ = evqualitygrad(vdVector, vtheta, ik, jk, angle_num, d, dim, ndata);
@@ -397,7 +397,7 @@ int evrotMain(vector<vector<double>>& vdVector, vector<vector<int>>& cluster_arr
 
 double evqual(vector<vector<double>>& vdVector, int dim, int ndata)
 {
-/////////¸ù¾İ¾ØÕódim*ndata,ÇóJÖµ
+/////////æ ¹æ®çŸ©é˜µdim*ndata,æ±‚Jå€¼
 	vector<double> max_values(ndata,0);
 	vector<int> max_index(ndata, 0);
 	for (int i=0;i<ndata;i++)
@@ -432,7 +432,7 @@ double evqual(vector<vector<double>>& vdVector, int dim, int ndata)
 int rotate_givens(vector < vector<double>>& vdVector, vector < vector<double>> &vdVectorRot, 
 	vector<double>& vtheta, int* ik, int* jk, int angle_num, int dim)
 {
-////×ö¼ªÎÄË¹Ğı×ª£¬Y:dim*ndata;
+////åšå‰æ–‡æ–¯æ—‹è½¬ï¼ŒY:dim*ndata;
 	vector<vector<double>> Uab(dim, vector<double>(dim, 0));
 	computeUab(vtheta, Uab, 0, angle_num - 1, ik, jk, dim);
 	vector<vector<double>> vdVectorZhuanZhi(vdVector[0].size(), vector<double>(vdVector.size(), 0));
@@ -464,7 +464,7 @@ int rotate_givens(vector < vector<double>>& vdVector, vector < vector<double>> &
 
 int computeUab(vector<double>& vtheta, vector<vector<double>>& Uab, int a, int b, int* ik, int* jk, int dim)
 {
-//////¸ù¾İ½Ç¶Ètheta£¬Çó¼ªÎÄË¹Ğı×ªµÄĞı×ª¾ØÕó
+//////æ ¹æ®è§’åº¦thetaï¼Œæ±‚å‰æ–‡æ–¯æ—‹è½¬çš„æ—‹è½¬çŸ©é˜µ
 	for (int i=0;i<dim;i++)
 	{
 		Uab[i][i] = 1.0;
@@ -538,7 +538,7 @@ double evqualitygrad(vector<vector<double>>& vdVector, vector<double>& vtheta,
 	matrixY.clear();
 	matrixA.clear();
 
-///////´ıĞø£»
+///////å¾…ç»­ï¼›
 
 
 
@@ -598,7 +598,7 @@ int autoClaster(vector<vector<double>>& vdVector, vector<vector<int>>& clasterd_
 	vector<double> max_value(ndata, 0);
 	vector<int> max_index(ndata, 0);
 //	vector<int> claster_count(dim, 0);
-////ÕÒ³öÃ¿Ò»ĞĞÖĞ×î´óµÄÊıÄ¿£¬²¢Í³¼ÆÊôÓÚÃ¿Ò»¸ödimµÄÏñËØµÄ¸öÊı
+////æ‰¾å‡ºæ¯ä¸€è¡Œä¸­æœ€å¤§çš„æ•°ç›®ï¼Œå¹¶ç»Ÿè®¡å±äºæ¯ä¸€ä¸ªdimçš„åƒç´ çš„ä¸ªæ•°
 	
 	for (int i=0;i<ndata;i++)
 	{
