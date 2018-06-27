@@ -73,7 +73,7 @@ int caculateW1(vector<int>& supixelName,vector<vector<int>>& coordinateOfSupixel
 int getCoorMatrix(Mat &img,double *coorMatrix,vector<int>& supixelInfmation,vector<int>& pixelOfFlag,int directionFlag,int distanceFlag)
 {
 //////////////////////////////////////////////////////////////////////////
-// coorMatrixΪһ����СΪ256*256�ľ���
+// coorMatrix为一个大小为256*256的矩阵
 //directionFlag        xita
 //      0               0
 //      1               45
@@ -207,8 +207,8 @@ int getSuperpixelVector(Mat& img,vector<int>& supixelInfmation,vector<vector<int
 				double varianceN = 0;
 				for (int m=0;m<256;m++)
 				{
-					//sumM:һ�еĺ�
-					//sumN:һ�еĺ�
+					//sumM:一行的和
+					//sumN:一列的和
 					double aveSumM = 0;
 					double aveSumN = 0;
 					for (int n=0;n<256;n++)
@@ -223,8 +223,8 @@ int getSuperpixelVector(Mat& img,vector<int>& supixelInfmation,vector<vector<int
 				}
 				for (int m = 0; m < 256; m++)
 				{
-					//sumM:һ�еĺ�
-					//sumN:һ�еĺ�
+					//sumM:一行的和
+					//sumN:一列的和
 					double aveSumM = 0;
 					double aveSumN = 0;
 					for (int n = 0; n < 256; n++)
