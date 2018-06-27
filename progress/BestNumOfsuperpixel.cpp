@@ -53,11 +53,12 @@ int main()
 		if (ROI_Pixel_num > 10000) { pixel_num = 500; }
 		else { pixel_num = 100; }
 
-		for (int kn =10; kn < (double)ROI_Pixel_num / pixel_num; kn = kn + 2)
-		{
-			clusterBasedSuperpixel(origin_pic_name, sPathName, ROI_Pixel_num, kn, si, imgs);
+		//for (int kn =10; kn < (double)ROI_Pixel_num / pixel_num; kn = kn + 2)
+		//{
+		int kn = 24;
+		clusterBasedSuperpixel(origin_pic_name, sPathName, ROI_Pixel_num, kn, si, imgs);
 
-		}
+		//}
 	}
 
 	return 0;
